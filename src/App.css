@@ -1,3 +1,8 @@
 body {
     font-family: 'Comic Neue';
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
