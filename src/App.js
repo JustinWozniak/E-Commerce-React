@@ -13,6 +13,7 @@ class App extends React.Component {
 
     this.state = {
       currentUser: null,
+      userName:null
     };
   }
 
@@ -23,8 +24,9 @@ class App extends React.Component {
   componentDidMount() {
     this.unSubscribeFromAuth = auth.onAuthStateChanged((user) => {
       this.setState({ currentUser: user });
+      // this.setState({ userName: user.displayName });
       //THIS IS WHERE WE GET USER INFO FOR OUR ENTIRE PROJECT
-      console.log(user);
+      // console.log(user.displayName);
     });
   }
 
@@ -33,9 +35,10 @@ class App extends React.Component {
   }
 
   render() {
+    // console.log(this.state.currentUser.)
     return (
       <div>
-        <Header />
+        <Header currentUser={this.state.currentUser} displayName={this.state.displayName} />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
