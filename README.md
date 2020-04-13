@@ -1,3 +1,6 @@
+Full webstore built with React, and some help from Redux, Google Fonts and Sass
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
