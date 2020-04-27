@@ -3,14 +3,14 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 const config = {
-    apiKey: "AIzaSyD11WZIBS_PvLPcQQjQYT6Qy-CnIRtI9uY",
-    authDomain: "e-commerce-40ff4.firebaseapp.com",
-    databaseURL: "https://e-commerce-40ff4.firebaseio.com",
-    projectId: "e-commerce-40ff4",
-    storageBucket: "e-commerce-40ff4.appspot.com",
-    messagingSenderId: "982285476260",
-    appId: "1:982285476260:web:1b0af33ebfb245f53f2131",
-    measurementId: "G-4PMYX91BZ6"
+  apiKey: "AIzaSyD11WZIBS_PvLPcQQjQYT6Qy-CnIRtI9uY",
+  authDomain: "e-commerce-40ff4.firebaseapp.com",
+  databaseURL: "https://e-commerce-40ff4.firebaseio.com",
+  projectId: "e-commerce-40ff4",
+  storageBucket: "e-commerce-40ff4.appspot.com",
+  messagingSenderId: "982285476260",
+  appId: "1:982285476260:web:1b0af33ebfb245f53f2131",
+  measurementId: "G-4PMYX91BZ6"
 };
 
 firebase.initializeApp(config);
@@ -39,6 +39,18 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
   return userRef;
 };
+
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+  const collectionRef = firestore.collection(collectionKey)
+
+
+  const batch = firestore.batch()
+  objectsToAdd.forEach(obj => {
+    const newDocRef = collectionRef.doc()
+    batch.set(newDocRef,obj)
+  })
+  return await batch.commit()
+}
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();

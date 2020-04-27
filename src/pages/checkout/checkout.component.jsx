@@ -39,7 +39,7 @@ const CheckoutPage = ({ cartItems, total }) => (
     <div className='test-warning'>
       ***Please use the following test credit card to test billing***
 <hr />
-4242 4242 4242 4242 - Exp:01/20 CVC: 123
+4242 4242 4242 4242 - Exp:Any Future Date CVC: 123
 </div>
 
   </div>
