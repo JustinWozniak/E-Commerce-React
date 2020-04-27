@@ -3,16 +3,21 @@ import CollectionsOverview from '../../components/collections-overview/collectio
 import { Route } from 'react-router-dom'
 import CollectionPage from '../collection/collection.component'
 import { firestore, convertCollectionsSnapshotToMap } from '../../firebase/firebase.utils'
+import { connect } from 'react-redux'
+import { updateCollection } from '../../redux/shop/shop.actions'
+
 
 class ShopPage extends React.Component {
   unSubscribeFromSnapshot = null
 
   componentDidMount() {
+    const { updateCollection } = this.props
+
     //JUST NOTICED TYPO IN FIRESTORE TOO LATE TO CHANGE NOW COLLECTIONS
     const collectionRef = firestore.collection('collecions')
     collectionRef.onSnapshot(async snapshot => {
-      const collection = convertCollectionsSnapshotToMap(snapshot)
-      console.log(collection)
+      const collectionsMap = convertCollectionsSnapshotToMap(snapshot)
+      updateCollection(collectionsMap)
     })
   }
 
@@ -29,6 +34,8 @@ class ShopPage extends React.Component {
 }
 
 
+const mapDispatchToProps = dispatch => ({
+  updateCollection: collectionsMap => dispatch(updateCollection(collectionsMap))
+})
 
-
-export default ShopPage
+export default connect(null, mapDispatchToProps)(ShopPage)
