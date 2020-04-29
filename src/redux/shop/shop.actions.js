@@ -18,7 +18,7 @@ export const fetchCollectionsFailure = errorMessage => ({
   type: ShopActionTypes.FETCH_COLLECTIONS_FAILURE,
   payload: errorMessage
 });
-//TYPO HERE FOR COLLECTIONS...ITS LABELED COLLECIONS IN FIRESTORE
+
 export const fetchCollectionsStartAsync = () => {
   return dispatch => {
     const collectionRef = firestore.collection('collecions');
