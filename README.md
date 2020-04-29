@@ -1,4 +1,4 @@
-Full webstore built with Javascript/React, and some help from Redux, Redux Persist, Redux Thunk, Reselect, Stripe Payments, Google Fonts, Sass and JS Styled-Components...
+Full webstore built with Javascript/React, and some help from Redux, Redux Persist, Redux Thunk, Redux Saga, Reselect, Stripe Payments, Google Fonts, Sass and JS Styled-Components...(Im tryin everything here LMAO)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
