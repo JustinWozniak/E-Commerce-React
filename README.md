@@ -1,7 +1,7 @@
 SEE THE APP LIVE!:
 https://crownclothesapp.herokuapp.com/
 
-Full webstore built with Javascript/React, and some help from Redux, Redux Persist, Redux Thunk, Redux Saga, Reselect, Stripe Payments, Google Fonts, Sass and JS Styled-Components...(Im tryin everything here LMAO)
+Full webstore built with Javascript/React, and some help from Redux, Redux Persist, Redux Thunk, Redux Saga, Reselect, Stripe Payments, Google Fonts, Sass and JS Styled-Components...All with A Node backend for processing payments(Im tryin everything here LMAO)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
